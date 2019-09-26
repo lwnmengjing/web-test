@@ -22,7 +22,7 @@ func main() {
 	m := autocert.Manager{
 		Prompt:     autocert.AcceptTOS,
 		//HostPolicy: autocert.HostWhitelist("jifenhua.cn", "*.jifenhua.cn"),
-		//Cache:      autocert.DirCache("/data/www/.cache"),
+		Cache:      autocert.DirCache("./"),
 	}
 
 	log.Fatal(autotls.RunWithManager(r, &m))
